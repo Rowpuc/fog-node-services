@@ -48,10 +48,11 @@ while cursor.alive:
             'value': doc['value'],
              })
           print('Uploaded Mongo document: '+ str(doc['_id']))
+          
           collection.update_one({'_id':doc['_id']},{'$set': {'uploaded': True}})
           
           
         else:
-          print('Already uploaded '+ str(doc['_id']))
+          a=1
     except StopIteration:
         time.sleep(1)
